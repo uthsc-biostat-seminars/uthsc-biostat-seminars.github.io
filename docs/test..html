@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nested Accordion Example</title>
+    <link rel="stylesheet" href="nested_styles.css">
+</head>
+<body>
+    <div class="accordion">
+        <h1>Frequently Asked Questions</h1>
+        <div class="container">
+            <div class="label">What is HTML?</div>
+            <div class="content">Content for HTML...</div>
+        </div>
+
+        <!-- Nested Accordion Starts Here -->
+        <div class="container">
+            <div class="label">More Topics</div>
+            <div class="content">
+                <div class="nested-accordion">
+                    <div class="container">
+                        <div class="label">Nested Topic 1</div>
+                        <div class="content">Nested content 1...</div>
+                    </div>
+                    <div class="container">
+                        <div class="label">Nested Topic 2</div>
+                        <div class="content">Nested content 2...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nested Accordion Ends Here -->
+
+        <div class="container">
+            <div class="label">What is CSS?</div>
+            <div class="content">Content for CSS...</div>
+        </div>
+    </div>
+
+    <script src="nested_test.js" type="text/javascript"></script>
+</body>
+</html>

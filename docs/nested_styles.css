@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+/* General styling */
+body {
+  background-color: #0A2344;
+  font-family: 'rubik', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.accordion {
+  width: 800px;
+  margin: 90px auto;
+  color: black;
+  background-color: white;
+  padding: 45px 45px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.accordion .container {
+  position: relative;
+  margin: 10px 0;
+}
+
+/* Top-level labels */
+.accordion > .container > .label {
+  padding: 10px 0;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+/* Nested accordion styles */
+.accordion .container .accordion .label {
+  font-size: 24px; /* Smaller font size for nested labels */
+  color: #333; /* Darker text color for nested labels */
+  padding-left: 20px; /* Indent nested labels */
+}
+
+/* Plus sign for labels */
+.accordion .label::before {
+  content: '+';
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* Content styling */
+.accordion .content {
+  background: white;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 780px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+/* Horizontal line */
+.accordion hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid grey;
+}
+
+/* Style when container is active */
+.accordion .container.active .content {
+  height: auto; /* Adjust height to content */
+  padding: 15px;
+}
+
+/* Minus sign when active */
+.accordion .container.active .label::before {
+  content: '-';
+  color: rgb(207, 65, 65);
+  transform: translateY(-110%);
+}
+
+/* Additional styles for nested content */
+.accordion .container .accordion .content {
+  font-size: 18px; /* Smaller font size for nested content */
+  padding-left: 20px; /* Indent nested content */
+  border-left: 2px solid #ddd; /* Vertical line for nested content */
+}
+
+
+/* Nested Accordion Specific Styles */
+.nested-accordion .container {
+    margin: 5px 0;
+  }
+  
+  .nested-accordion .label {
+    font-size: 24px;
+    padding-left: 15px;
+  }
+  
+  .nested-accordion .content {
+    font-size: 18px;
+    padding-left: 15px;
+  }
+  
