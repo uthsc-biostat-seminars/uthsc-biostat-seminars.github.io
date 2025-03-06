@@ -121,9 +121,10 @@ for year in years:
         if df['Date'][i].startswith(year):
             # remove '"' from the strings
             df['Speaker'][i] = df['Speaker'][i].replace('"', '')
+            df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
             df['Title'][i] = df['Title'][i].replace('"', '')
             df['Abstract'][i] = df['Abstract'][i].replace('"', '')
-            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
+            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]},{df["Affiliation"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
     html += '</div>\n'
 
 # add </body> </html>
