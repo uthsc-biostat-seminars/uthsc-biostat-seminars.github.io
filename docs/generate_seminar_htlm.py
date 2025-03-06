@@ -31,12 +31,12 @@
 </head>
 <body>
 
-<h2>Accordion</h2>
+<h2>Past Biostatistics Seminar</h2>
 
 <button class="accordion">2023</button> # Put the year here
 <div class="panel">
   <p></p>
-    <button class="accordion">2023-11-13, Dr. Xichen Mou, Generalized kernel machine regression</button> # Put the date, speaker, and title here
+    <button class="accordion">2023-11-13, Dr. Xichen Mou, University of Memphis, Generalized kernel machine regression</button> # Put the date, speaker, and title here
   <div class="panel"> # Put the abstract here
     <p>Kernel Machine Regression (KMR) serves as a nonparametric regression approach fundamental in numerous scientific domains. By utilizing a map determined by the kernel function, KMR transforms original predictors into a higher-dimensional feature space, simplifying the recognition of patterns between outcomes and independent variables. KMR is invaluable in studies within the biomedical and environmental health sectors, where it aids in identifying crucial exposure points and gauging their impact on results. In our study, we introduce the Generalized Bayesian Kernel Machine Regression (GBKMR) which integrates the KMR model within the Bayesian context. GBKMR not only complements the conventional KMR but also suits a range of outcome data, from continuous to binary and count data. Simulation studies confirm GBKMR's superior precision and robustness. We further employ this method on a real data set to pinpoint specific cytosine phosphate guanine (CpG) locations correlated with health-related outcomes or exposures.</p>
   </div>
@@ -105,7 +105,7 @@ html = """
 </head>
 <body>
 
-<h2>Accordion</h2>
+<h2>Past Biostatistics Seminars</h2>
 
 """
 # remove '"' from the years
@@ -124,7 +124,7 @@ for year in years:
             df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
             df['Title'][i] = df['Title'][i].replace('"', '')
             df['Abstract'][i] = df['Abstract'][i].replace('"', '')
-            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]},{df["Affiliation"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
+            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]}, {df["Affiliation"][i]}, {df["Speaker"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
     html += '</div>\n'
 
 # add </body> </html>
