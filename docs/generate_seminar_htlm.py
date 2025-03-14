@@ -142,7 +142,10 @@ df = df.sort_values(by='Date', ascending=False)
 years = df['Date'].str.split('-').str[0].unique()
 
 for year in years:
-    html += f'<button class="accordion">{year}</button>\n<div class="panel">\n<p></p>\n'
+    if year == years[0]:
+      html += f'<button class="accordion active">{year}</button>\n<div class="panel"  style="display: block;">\n<p></p>\n'
+    else:
+      html += f'<button class="accordion">{year}</button>\n<div class="panel">\n<p></p>\n'
     for i in range(len(df)-1, -1, -1):
         if df['Date'][i].startswith(year):
             # remove '"' from the strings
