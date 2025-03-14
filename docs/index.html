@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: #a0dab3;
+  color: #58595b;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -14,11 +14,15 @@
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #bcbec0;
   transition: 0.4s;
 }
 
 .active, .accordion:hover {
-  background-color: #ccc; 
+  background-color: #00965e;
+  color: white;
 }
 
 .panel {
@@ -33,14 +37,14 @@
 
 <h2>Past Biostatistics Seminars</h2>
 
-<button class="accordion">2025</button>
-<div class="panel">
+<button class="accordion active">2025</button>
+<div class="panel" style="display: block;">
 <p></p>
-<button class="accordion">2025-02-17, Dr. Ali Arab, Georgetown University, Dr. Ali Arab, Assessing Health Policy Outcomes with Interrupted Time Series Design</button>
-<div class="panel">
+<button class="accordion active">2025-02-17, Dr. Ali Arab, Georgetown University, Dr. Ali Arab, Assessing Health Policy Outcomes with Interrupted Time Series Design</button>
+<div class="panel" style="display: block;">
 <p>Modeling the dynamics of infectious diseases is often challenging and this is exacerbated under data sparsity. For example, modeling the dynamics of a vector-borne infectious disease at early stages is very challenging due to data sparsity (as well as potential lack of knowledge regarding the disease dynamics itself); this is an important issue for modeling emerging and re-emerging epidemics. Moreover, data sparsity may also result in inefficient inference and ineffective prediction for such processes. This is a common issue in modeling rare or emerging ecological, environmental, epidemiological, and social processes that are new or uncommon in specific areas, specific time periods, or those conditions that are hard to detect. Consequently, due to the urgency of modeling these processes in many situations (e.g., in a crisis situation), often there are limited predictor data to use either because of lack of knowledge about the process or the need for fine resolution predictor data. Classic models that are commonly used in these areas often fall short of modeling such events and are unable to provide reliable inference and reasonable or accurate forecasts. These issues require consideration of modeling strategies such as using organic data sources in conjunction with conventional data as well as examining how the learning from previous similar situations can be transferred to improve the modeling and forecasting of the situation under study. In this paper, we discuss strategies for dealing with some of the statistical issues of modeling dynamics under data sparsity including: utilizing blended data (i.e., both conventional and organic data sources), considering a mechanistic science-based modeling framework to model the dynamics of a spatio-temporal based on zero-modified hierarchical modeling approaches, and implementing improved parameter estimation and forecasting through transfer learning. As a case study, we will discuss the spread of Lyme disease in the United States over the past several decades.</p>
 </div>
-<button class="accordion">2025-01-13, Dr. Saml Li, University of Tennessee Health Science Center, Dr. Saml Li, Assessing Health Policy Outcomes with Interrupted Time Series Design</button>
+<button class="accordion">2025-01-13, Dr. Sam Li, University of Tennessee Health Science Center, Dr. Saml Li, Assessing Health Policy Outcomes with Interrupted Time Series Design</button>
 <div class="panel">
 <p>Interrupted time series design is a key method in health policy research, commonly employed to evaluate the impact of health policies on long-term health outcome trends. This seminar will explore how this design can assess the effects of policies at different time points, providing valuable insights for decision-makers in determining their long-term effectiveness. Attendees will receive a comprehensive introduction to interrupted time series design, with a focus on its application in analyzing health policy trends.</p>
 </div>
@@ -517,4 +521,3 @@ for (i = 0; i < acc.length; i++) {
 
 </body>
 </html>
-
