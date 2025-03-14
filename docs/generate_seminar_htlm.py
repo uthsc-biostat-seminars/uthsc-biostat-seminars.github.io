@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: #a0dab3;
+  color: #58595b;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -14,11 +17,22 @@
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #bcbec0;
   transition: 0.4s;
 }
 
 .active, .accordion:hover {
-  background-color: #ccc; 
+  background-color: #00965e;
+  color: white;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif; 
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
 }
 
 .panel {
@@ -30,8 +44,6 @@
 </style>
 </head>
 <body>
-
-<h2>Past Biostatistics Seminar</h2>
 
 <button class="accordion">2023</button> # Put the year here
 <div class="panel">
@@ -76,11 +88,15 @@ html = """
 <!DOCTYPE html>
 <html>
 <head>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 .accordion {
-  background-color: #eee;
-  color: #444;
+  background-color: #a0dab3;
+  color: #58595b;
   cursor: pointer;
   padding: 18px;
   width: 100%;
@@ -88,11 +104,23 @@ html = """
   text-align: left;
   outline: none;
   font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  border: 1px solid #bcbec0;
   transition: 0.4s;
 }
 
+
 .active, .accordion:hover {
-  background-color: #ccc; 
+  background-color: #00965e;
+  color: white;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif; 
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
 }
 
 .panel {
@@ -105,7 +133,6 @@ html = """
 </head>
 <body>
 
-<h2>Past Biostatistics Seminars</h2>
 
 """
 # remove '"' from the years
@@ -124,7 +151,7 @@ for year in years:
             df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
             df['Title'][i] = df['Title'][i].replace('"', '')
             df['Abstract'][i] = df['Abstract'][i].replace('"', '')
-            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]}, {df["Affiliation"][i]}, {df["Speaker"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
+            html += f'<button class="accordion">{df["Date"][i]}, {df["Speaker"][i]}, {df["Affiliation"][i]}, {df["Title"][i]}</button>\n<div class="panel">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
     html += '</div>\n'
 
 # add </body> </html>
