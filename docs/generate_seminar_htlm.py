@@ -104,6 +104,7 @@ html = """
   outline: none;
   font-size: 15px;
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   border: 1px solid #bcbec0;
   transition: 0.4s;
 }
