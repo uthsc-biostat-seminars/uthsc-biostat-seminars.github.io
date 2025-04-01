@@ -185,7 +185,7 @@ for (i = 0; i < acc.length; i++) {
 """
 
 
-with open('index.html', 'w') as f:
+with open('../index.html', 'w') as f:
     f.write(html)
 
 print('index.html has been generated')

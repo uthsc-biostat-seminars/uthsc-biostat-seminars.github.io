@@ -187,7 +187,7 @@ for (i = 0; i < acc.length; i++) {
 """
 
 
-with open('upcoming.html', 'w') as f:
+with open('../upcoming/index.html', 'w') as f:
     f.write(html)
 
-print('upcoming.html has been generated')
+print('upcoming/index.html has been generated')
