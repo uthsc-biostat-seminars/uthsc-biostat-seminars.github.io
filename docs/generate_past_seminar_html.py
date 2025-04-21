@@ -73,14 +73,14 @@ p {
 
 
 
-# First acquire data from https://github.com/uthsc-biostat-seminars/Seminars/blob/main/seminars.tsv
+# First acquire data from https://github.com/uthsc-biostat-seminars/Seminars/blob/main/past_seminars.tsv
 # Then generate html file for the website
 
 import pandas as pd
 
 # Read data
 
-df = pd.read_csv('https://raw.githubusercontent.com/uthsc-biostat-seminars/Seminars/main/seminars.tsv', sep='\t')
+df = pd.read_csv('https://raw.githubusercontent.com/uthsc-biostat-seminars/Seminars/main/past_seminars.tsv', sep='\t')
 # there are 5 columns: Date, Speaker, Affiliation, Title, Abstract
 # everything is in string format
 
@@ -150,10 +150,10 @@ for year in years:
     for i in range(len(df)-1, -1, -1):
         if df['Date'][i].startswith(year):
             # remove '"' from the strings
-            df['Speaker'][i] = df['Speaker'][i].replace('"', '')
-            df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
-            df['Title'][i] = df['Title'][i].replace('"', '')
-            df['Abstract'][i] = df['Abstract'][i].replace('"', '')
+            df.loc[i, 'Speaker'] = df['Speaker'][i].replace('"', '')
+            df.loc[i, 'Affiliation'] = df['Affiliation'][i].replace('"', '')
+            df.loc[i, 'Title'] = df['Title'][i].replace('"', '')
+            df.loc[i,'Abstract'] = df['Abstract'][i].replace('"', '')
             if i == len(df)-1 and year == years[0]:
               html += f'<button class="accordion active">{df["Date"][i]} <br> {df["Speaker"][i]}, {df["Affiliation"][i]} <br> {df["Title"][i]}</button>\n<div class="panel" style="display: block;">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
             else:

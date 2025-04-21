@@ -151,10 +151,14 @@ for year in years:
     for i in range(len(df)):
         if df['Date'][i].startswith(year):
             # remove '"' from the strings
-            df['Speaker'][i] = df['Speaker'][i].replace('"', '')
-            df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
-            df['Title'][i] = df['Title'][i].replace('"', '')
-            df['Abstract'][i] = df['Abstract'][i].replace('"', '')
+            df.loc[i, 'Speaker'] = df['Speaker'][i].replace('"', '')
+            df.loc[i, 'Affiliation'] = df['Affiliation'][i].replace('"', '')
+            df.loc[i, 'Title'] = df['Title'][i].replace('"', '')
+            df.loc[i, 'Abstract'] = df['Abstract'][i].replace('"', '')
+            # df['Speaker'][i] = df['Speaker'][i].replace('"', '')
+            # df['Affiliation'][i] = df['Affiliation'][i].replace('"', '')
+            # df['Title'][i] = df['Title'][i].replace('"', '')
+            # df['Abstract'][i] = df['Abstract'][i].replace('"', '')
             # if i == len(df)-1 and year == years[0]:
             if i == 0 and year == years[0]:
               html += f'<button class="accordion active">{df["Date"][i]} <br> {df["Speaker"][i]}, {df["Affiliation"][i]} <br> {df["Title"][i]}</button>\n<div class="panel" style="display: block;">\n<p>{df["Abstract"][i]}</p>\n</div>\n'
