@@ -3,7 +3,7 @@ name: Run Data Update Weekly
 # run every week on Tuesday at 00:00 UTC
 on:
   schedule:
-    - cron: '0 0 * * 2'
+    - cron: '30 0 * * 2'
   workflow_dispatch:
 
 jobs:
@@ -25,7 +25,9 @@ jobs:
         pip install -r scripts/requirements.txt
 
     - name: Run the script
-      run: python scripts/update_seminars.py
+      run: |
+	python docs/generate_past_seminar_html.py
+	python docs/generate_upcoming_seminar_html.py
 
     - name: Commit and push changes
       run: |
