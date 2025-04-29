@@ -77,6 +77,9 @@ p {
 # Then generate html file for the website
 
 import pandas as pd
+import os
+
+os.makedirs('../upcoming', exist_ok=True)
 
 # Read data
 
